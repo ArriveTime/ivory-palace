@@ -40,7 +40,7 @@
         "name": "IvoryPalace.com",
         "url": "https://ivorypalace.com",
         "logo": "https://ivorypalace.com/logo.png",
-        "email": "concierge@ivorypalace.com",
+        "email": "All4aim@hotmail.com",
         "description": "UNRIVALED LUXURY & GLOBAL ADVENTURE: Media and marketing platform for bespoke international travel, private jet charters, superyacht expeditions, and luxury estate stays.",
         "address": {
           "@type": "PostalAddress",
@@ -875,7 +875,7 @@
             <p class="dest-desc">Fly directly between luxury tented camps via private bush aircraft, with personal game drivers and wildlife conservationists.</p>
             <div class="dest-footer">
               <div class="dest-price">From $28,500 <span>per guest / 8 days</span></div>
-              <span class="btn-details" onclick="openModal('modalDest1')">View Itinerary &rarr;</span>
+              <span class="btn-details" onclick="openModal('modalConcierge')">View Itinerary &rarr;</span>
             </div>
           </div>
         </div>
@@ -965,7 +965,7 @@
       <div class="footer-col">
         <h4>Desk Contact</h4>
         <ul class="footer-links">
-          <li><a href="mailto:concierge@ivorypalace.com">concierge@ivorypalace.com</a></li>
+          <li><a href="mailto:All4aim@hotmail.com">All4aim@hotmail.com</a></li>
           <li><a href="tel:+18005550199">+1 (800) 555-0199</a></li>
           <li><a href="#">Geneva Desk</a></li>
           <li><a href="#">Tokyo Desk</a></li>
@@ -985,32 +985,36 @@
     </div>
   </footer>
 
-  <!-- Concierge Request Modal -->
+  <!-- Concierge Request Modal with FormSubmit Email Endpoint -->
   <div id="modalConcierge" class="modal-overlay">
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal('modalConcierge')">&times;</button>
       <h3 style="font-family: Georgia, serif; font-size: 1.6rem; color: var(--navy-deep); margin-bottom: 0.5rem;">IvoryPalace Executive Desk</h3>
       <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Inquire regarding private jet charters, custom itineraries, or estate access worldwide.</p>
       
-      <form onsubmit="event.preventDefault(); alert('Your dispatch request has been logged with the IvoryPalace Executive Desk.'); closeModal('modalConcierge');">
+      <form action="https://formsubmit.co/All4aim@hotmail.com" method="POST">
+        <!-- FormSubmit Custom Configuration -->
+        <input type="hidden" name="_subject" value="New Inquiry from IvoryPalace.com">
+        <input type="hidden" name="_captcha" value="false">
+
         <div class="form-group" style="margin-bottom: 1rem;">
           <label>Full Name / Principal Representative</label>
-          <input type="text" class="form-control" required placeholder="e.g. Lord Harrington / Executive Office">
+          <input type="text" name="Name" class="form-control" required placeholder="e.g. Lord Harrington / Executive Office">
         </div>
 
         <div class="form-group" style="margin-bottom: 1rem;">
           <label>Email Address</label>
-          <input type="email" class="form-control" required placeholder="concierge@office.com">
+          <input type="email" name="Email" class="form-control" required placeholder="concierge@office.com">
         </div>
 
         <div class="form-group" style="margin-bottom: 1rem;">
           <label>Estimated Departure Timeline</label>
-          <input type="text" class="form-control" placeholder="e.g. Q3 2026 / Immediate Dispatch">
+          <input type="text" name="Timeline" class="form-control" placeholder="e.g. Q3 2026 / Immediate Dispatch">
         </div>
 
         <div class="form-group" style="margin-bottom: 1.5rem;">
           <label>Expedition Requirements & Scope</label>
-          <textarea class="form-control" rows="4" placeholder="Detail destination preferences, yacht size, jet requirements..."></textarea>
+          <textarea name="Requirements" class="form-control" rows="4" placeholder="Detail destination preferences, yacht size, jet requirements..."></textarea>
         </div>
 
         <button type="submit" class="btn-concierge" style="width: 100%; padding: 0.9rem;">Submit Confidential Inquiry</button>
