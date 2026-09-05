@@ -8,7 +8,7 @@
   <title>IvoryPalace.com | UNRIVALED LUXURY & GLOBAL ADVENTURE | Private Jets, Yacht Charters & Luxury Expeditions</title>
   <meta name="title" content="IvoryPalace.com | UNRIVALED LUXURY & GLOBAL ADVENTURE | Private Jets, Yacht Charters & Luxury Expeditions">
   <meta name="description" content="IvoryPalace.com: The world's premier platform for bespoke international travel, private jet expeditions, luxury yacht charters, and ultra-exclusive cultural adventures across 7 continents.">
-  <meta name="keywords" content="IvoryPalace, Ivory Palace travel, luxury travel, private jet charters, luxury yacht charter, bespoke expeditions, luxury African safari, luxury Antarctic cruise, ultra luxury travel agent">
+  <meta name="keywords" content="IvoryPalace, Ivory Palace travel, luxury travel, private jet charters, luxury yacht charter, bespoke expeditions, luxury African safari, luxury Antarctic cruise, ultra luxury travel media">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="IvoryPalace.com Executive Desk">
   <link rel="canonical" href="https://ivorypalace.com/">
@@ -35,13 +35,13 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "TravelAgency",
-        "@id": "https://ivorypalace.com/#agency",
+        "@type": "Organization",
+        "@id": "https://ivorypalace.com/#organization",
         "name": "IvoryPalace.com",
         "url": "https://ivorypalace.com",
         "logo": "https://ivorypalace.com/logo.png",
         "email": "concierge@ivorypalace.com",
-        "description": "UNRIVALED LUXURY & GLOBAL ADVENTURE: Bespoke international travel, private jet charters, superyacht expeditions, and luxury estate stays.",
+        "description": "UNRIVALED LUXURY & GLOBAL ADVENTURE: Media and marketing platform for bespoke international travel, private jet charters, superyacht expeditions, and luxury estate stays.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Beverly Hills",
@@ -56,7 +56,7 @@
         "url": "https://ivorypalace.com",
         "name": "IvoryPalace.com",
         "publisher": {
-          "@id": "https://ivorypalace.com/#agency"
+          "@id": "https://ivorypalace.com/#organization"
         }
       }
     ]
@@ -675,6 +675,29 @@
       color: var(--gold-light);
     }
 
+    /* Legal Disclaimer Box */
+    .legal-disclaimer-box {
+      max-width: 1300px;
+      margin: 0 auto 2rem auto;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-left: 3px solid var(--gold-main);
+      border-radius: 2px;
+      font-size: 0.72rem;
+      line-height: 1.6;
+      color: #a0aab8;
+    }
+
+    .legal-disclaimer-box strong {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.75rem;
+    }
+
     .footer-bottom {
       max-width: 1300px;
       margin: 0 auto;
@@ -916,7 +939,7 @@
       <div class="footer-brand">
         <h3>Ivory<span>Palace</span>.com</h3>
         <p style="margin-bottom: 1rem; color: #8892a0;">UNRIVALED LUXURY & GLOBAL ADVENTURE</p>
-        <p>Providing executive travel architecture, private aviation, and bespoke international expedition planning for globally minded individuals and family offices.</p>
+        <p>Providing executive travel architecture, private aviation information, and bespoke international expedition planning content for globally minded individuals and family offices.</p>
       </div>
 
       <div class="footer-col">
@@ -948,6 +971,12 @@
           <li><a href="#">Tokyo Desk</a></li>
         </ul>
       </div>
+    </div>
+
+    <!-- Legal Disclaimer Section -->
+    <div class="legal-disclaimer-box">
+      <strong>Legal & Service Disclaimer</strong>
+      IvoryPalace.com is not a travel agency and all bookings are fulfilled via third-party merchants holding appropriate licenses in their respective home states and jurisdictions. IvoryPalace.com does not receive compensation of any kind via our website or as commission from any merchants. IvoryPalace.com operates solely as a media and marketing platform for news, information, and editorial content only, and we do not guarantee the services or prices offered by third-party merchants. Please perform your own due diligence prior to purchasing any services or products from third-party merchants.
     </div>
 
     <div class="footer-bottom">
@@ -989,46 +1018,40 @@
     </div>
   </div>
 
-  <!-- Destination Modal 1 -->
-  <div id="modalDest1" class="modal-overlay">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal('modalDest1')">&times;</button>
-      <h3 style="font-family: Georgia, serif; font-size: 1.5rem; color: var(--navy-deep); margin-bottom: 0.8rem;">The Great Migration Air Safari</h3>
-      <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem;">
-        Experience seamless wilderness travel as you hop between secluded ultraluxury camps across the Serengeti ecosystem on private aircraft. Enjoy exclusive access to private game conservancies free of public tourist vehicles, guided by world-renowned naturalists.
-      </p>
-      <button class="btn-concierge" onclick="closeModal('modalDest1'); openModal('modalConcierge');">Request Availability</button>
-    </div>
-  </div>
-
   <script>
-    // Live World Clocks Function
-    function updateClocks() {
-      const options = { hour: '2-digit', minute: '2-digit', hour12: false };
-      const now = new Date();
-      
-      document.getElementById('clockLondon').innerText = new Intl.DateTimeFormat('en-GB', { ...options, timeZone: 'Europe/London' }).format(now);
-      document.getElementById('clockParis').innerText = new Intl.DateTimeFormat('en-GB', { ...options, timeZone: 'Europe/Paris' }).format(now);
-      document.getElementById('clockTokyo').innerText = new Intl.DateTimeFormat('en-GB', { ...options, timeZone: 'Asia/Tokyo' }).format(now);
-      document.getElementById('clockNY').innerText = new Intl.DateTimeFormat('en-US', { ...options, timeZone: 'America/New_York' }).format(now);
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
     }
-    setInterval(updateClocks, 1000);
-    updateClocks();
 
-    // Journey Builder Dynamic Logic
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    function toggleAudio() {
+      const audio = document.getElementById('travelAudio');
+      const btn = document.getElementById('audioBtn');
+      if (audio.paused) {
+        audio.play();
+        btn.innerHTML = '&#10074;&#10074;';
+      } else {
+        audio.pause();
+        btn.innerHTML = '&#9654;';
+      }
+    }
+
     function updateJourney() {
       const mode = document.getElementById('buildMode').value;
       const region = document.getElementById('buildRegion').value;
       const duration = document.getElementById('buildDuration').value;
       const guests = document.getElementById('buildGuests').value;
 
-      document.getElementById('resTitle').innerText = mode + ' across ' + region;
-      document.getElementById('resDesc').innerText = duration + ' itinerary tailored for ' + guests + ' with private local concierges.';
+      document.getElementById('resTitle').innerText = `${mode} across ${region}`;
+      document.getElementById('resDesc').innerText = `${duration} itinerary tailored for ${guests} with dedicated host and private transfers.`;
     }
 
-    // Destination Filter Logic
     function filterDest(cat, btn) {
-      document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+      const buttons = document.querySelectorAll('.btn-filter');
+      buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const cards = document.querySelectorAll('.dest-card');
@@ -1039,41 +1062,6 @@
           card.style.display = 'none';
         }
       });
-    }
-
-    // Ambient Audio Player Controls
-    var audio = document.getElementById('travelAudio');
-    var audioBtn = document.getElementById('audioBtn');
-    var isPlaying = false;
-
-    function toggleAudio() {
-      if (isPlaying) {
-        audio.pause();
-        audioBtn.innerHTML = '&#9654;';
-        isPlaying = false;
-      } else {
-        audio.play().then(() => {
-          audioBtn.innerHTML = '&#10074;&#10074;';
-          isPlaying = true;
-        }).catch(() => {
-          alert('Click play again to start stream.');
-        });
-      }
-    }
-
-    // Modal Control Functions
-    function openModal(id) {
-      document.getElementById(id).classList.add('active');
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).classList.remove('active');
-    }
-
-    window.onclick = function(e) {
-      if (e.target.classList.contains('modal-overlay')) {
-        e.target.classList.remove('active');
-      }
     }
   </script>
 </body>
